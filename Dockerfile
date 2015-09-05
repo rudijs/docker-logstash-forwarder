@@ -5,7 +5,7 @@ ENV APT_REFRESHED_AT 2015-09-01.1
 RUN apt-get -yqq update
 
 RUN \
-    useradd --comment 'LogStash Forwarder Service User' --create-home --shell /bin/bash logstash-forwarder && \
+    useradd --comment 'LogStash Forwarder Service User' --create-home --groups adm --shell /bin/bash logstash-forwarder && \
     usermod --lock logstash-forwarder
 
 WORKDIR /home/logstash-forwarder
